@@ -1,8 +1,9 @@
 #!/usr/bin/env node
 
 var fs = require('fs')
+var path = require('path')
 
-fs.readFile('ants.txt', function(err,data){
+fs.readFile(path.resolve(__dirname,'ants.txt'), function(err,data){
     var ants = data.toString().split('~')
     var ant = ants[Math.floor(Math.random()*ants.length)]
     console.log(ant)
