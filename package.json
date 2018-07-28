@@ -1,0 +1,22 @@
+{
+  "name": "imanant",
+  "version": "1.0.0",
+  "description": "Node CLI tool that prints Ant aski art :D",
+  "main": "cli.js",
+  "bin":{
+    "imanant":"cli.js"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AntTargett/CLI-Tools.git"
+  },
+  "author": "Antony Targett",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AntTargett/CLI-Tools/issues"
+  },
+  "homepage": "https://github.com/AntTargett/CLI-Tools#readme"
+}
