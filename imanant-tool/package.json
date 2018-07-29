@@ -4,7 +4,8 @@
   "description": "Node CLI tool that prints Ant aski art :D",
   "main": "cli.js",
   "bin":{
-    "imanant":"cli.js"
+    "imanant":"cli.js",
+    "imanant help": "help.js"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
