@@ -5,16 +5,7 @@ var program = require("commander");
 var fs = require("fs");
 var path = require("path");
 
-// fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
-//   var logo = data.toString();
-//   version = logo;
-// });
-
-// program.version("1.6.0").on("-V,--version", function() {
-//   console.log("hi");
-// });
-
-program.command("print").action(function() {
+function printCurrentProfile() {
   fs.readFile(path.resolve(__dirname, "index.json"), function(err, data) {
     var jsonFile = JSON.parse(data);
     var currentProfile = jsonFile.profiles[jsonFile.currentProfile].fileName;
@@ -24,7 +15,9 @@ program.command("print").action(function() {
       console.log(ant);
     });
   });
-});
+}
+
+program.command("print").action(function(){printCurrentProfile()});
 
 program
   .command("set <file>")
@@ -81,25 +74,18 @@ program.on("command:*", function() {
   );
   process.exit(1);
 });
-// console.log(program)
-program
-  .option("-v, --Version", "Prints out the version number")
+program.option("-v, --Version", "Prints out the version number");
 
 program.parse(process.argv);
-
 
 if (program.Version) {
   fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
     var logo = data.toString();
     console.log(logo);
-    console.log("1.6.0");
+    console.log("1.8.0");
   });
 }
 
 if (program.args.length < 1 && !program.Version) {
-  fs.readFile(path.resolve(__dirname, "ants.txt"), function(err, data) {
-    var ants = data.toString().split("[break]");
-    var ant = ants[Math.floor(Math.random() * ants.length)];
-    console.log(ant);
-  });
+  printCurrentProfile();
 }
