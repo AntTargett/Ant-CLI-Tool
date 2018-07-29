@@ -1,6 +1,0 @@
-{
-    "profiles":[
-        {"ants":{"fileName":"ants.txt"}},
-        {"custom1":{"fileName":"ants.txt"}}
-    ]
-}
