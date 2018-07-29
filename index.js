@@ -5,7 +5,14 @@ var program = require("commander");
 var fs = require("fs");
 var path = require("path");
 
-program.version("1.5.0");
+// fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
+//   var logo = data.toString();
+//   version = logo;
+// });
+
+// program.version("1.6.0").on("-V,--version", function() {
+//   console.log("hi");
+// });
 
 program.command("print").action(function() {
   fs.readFile(path.resolve(__dirname, "index.json"), function(err, data) {
@@ -61,14 +68,35 @@ program
       if (err) {
         console.log(err);
       } else {
-        console.log(JSON.parse(data));
+        console.log("Current Profile " + JSON.parse(data).currentProfile);
+        console.log("Profiles " + JSON.stringify(JSON.parse(data).profiles));
       }
     });
   });
 
+program.on("command:*", function() {
+  console.error(
+    "Invalid command: %s\nSee --help for a list of available commands.",
+    program.args.join(" ")
+  );
+  process.exit(1);
+});
+// console.log(program)
+program
+  .option("-v, --Version", "Prints out the version number")
+
 program.parse(process.argv);
 
-if (program.args.length < 1) {
+
+if (program.Version) {
+  fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
+    var logo = data.toString();
+    console.log(logo);
+    console.log("1.6.0");
+  });
+}
+
+if (program.args.length < 1 && !program.Version) {
   fs.readFile(path.resolve(__dirname, "ants.txt"), function(err, data) {
     var ants = data.toString().split("[break]");
     var ant = ants[Math.floor(Math.random() * ants.length)];
