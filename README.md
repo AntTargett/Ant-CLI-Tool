@@ -17,6 +17,7 @@ npm install -g imanant
 - add(Not implemented): Can add your own text files with askii art.
 
 ## Features to come
-- Create your own profile
-- Add art to an exisitng profile
-- Swap between profiles
+- [ ] Create your own profile
+- [ ] Add art to an exisitng profile
+- [x] Swap between profiles
+- [ ] Add Colour :D 
