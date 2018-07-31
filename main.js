@@ -59,6 +59,13 @@ function list() {
     }
   );
 }
+function logo(){
+  fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
+    var logo = data.toString();
+    console.log(logo);
+    console.log("1.8.0");
+  });
+}
 
 program.command("print").action(function() {
   printCurrentProfile();
@@ -82,7 +89,7 @@ program
 program
   .command("list")
   .description("List avaiable profiles")
-  .action();
+  .action(list());
 
 program.on("command:*", function() {
   console.error(
@@ -96,11 +103,7 @@ program.option("-v, --Version", "Prints out the version number");
 program.parse(process.argv);
 
 if (program.Version) {
-  fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
-    var logo = data.toString();
-    console.log(logo);
-    console.log("1.8.0");
-  });
+logo()
 }
 
 if (program.args.length < 1 && !program.Version) {
