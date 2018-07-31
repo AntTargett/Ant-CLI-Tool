@@ -17,7 +17,9 @@ function printCurrentProfile() {
   });
 }
 
-program.command("print").action(function(){printCurrentProfile()});
+program.command("print").action(function() {
+  printCurrentProfile();
+});
 
 program
   .command("set <file>")
@@ -25,25 +27,31 @@ program
   .option("-a, --all", "List all files and folders")
   .option("-l, --long", "")
   .action(function(file) {
-    fs.readFile("index.json", "utf8", function readFileCallback(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        obj = JSON.parse(data); //now it an object
-        obj.currentProfile = file; //add some data
-        json = JSON.stringify(obj); //convert it back to json
-        fs.writeFile("index.json", json, "utf8", function writeFileCallback(
-          err,
-          data
-        ) {
-          if (err) {
-            console.log(err);
-          } else {
-            console.log("Successfully swapped profile");
-          }
-        }); // write it back
+    fs.readFile(
+      path.resolve(__dirname, "index.json"),
+      "utf8",
+      function readFileCallback(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          obj = JSON.parse(data); //now it an object
+          obj.currentProfile = file; //add some data
+          json = JSON.stringify(obj); //convert it back to json
+          fs.writeFile(
+            path.resolve(__dirname, "index.json"),
+            json,
+            "utf8",
+            function writeFileCallback(err, data) {
+              if (err) {
+                console.log(err);
+              } else {
+                console.log("Successfully swapped profile");
+              }
+            }
+          ); // write it back
+        }
       }
-    });
+    );
   });
 program
   .arguments("<pathToFile>")
@@ -57,14 +65,18 @@ program
   .command("list")
   .description("List avaiable profiles")
   .action(function() {
-    fs.readFile("index.json", "utf8", function readFileCallback(err, data) {
-      if (err) {
-        console.log(err);
-      } else {
-        console.log("Current Profile " + JSON.parse(data).currentProfile);
-        console.log("Profiles " + JSON.stringify(JSON.parse(data).profiles));
+    fs.readFile(
+      path.resolve(__dirname, "index.json"),
+      "utf8",
+      function readFileCallback(err, data) {
+        if (err) {
+          console.log(err);
+        } else {
+          console.log("Current Profile " + JSON.parse(data).currentProfile);
+          console.log("Profiles " + JSON.stringify(JSON.parse(data).profiles));
+        }
       }
-    });
+    );
   });
 
 program.on("command:*", function() {
