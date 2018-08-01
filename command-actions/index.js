@@ -1,5 +1,8 @@
-import addFunction from "./add"
-import list from "./list"
-import logo from "./logo"
-import print from "./print"
-import set from "./set"
+var addFunction = require("./add");
+var list = require("./list");
+var logo = require("./logo");
+var print = require("./print");
+var set = require("./set");
+var feedback = require("./feedback");
+
+module.exports = { addFunction, list, logo, print, set, feedback };

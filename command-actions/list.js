@@ -3,7 +3,7 @@ var path = require("path");
 
 function list() {
     fs.readFile(
-      path.resolve(__dirname, "main.json"),
+      path.resolve(__dirname, "../","main.json"),
       "utf8",
       function readFileCallback(err, data) {
         if (err) {
@@ -16,4 +16,4 @@ function list() {
     );
   }
 
-export default list
+module.exports=list
