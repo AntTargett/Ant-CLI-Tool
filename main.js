@@ -23,6 +23,14 @@ program
   .action(function(file) {
     CommandActions.set(file);
   });
+program
+  .command("remove <file>")
+  .description("Sets the file to the profiles")
+  .option("-a, --all", "List all files and folders")
+  .option("-l, --long", "")
+  .action(function(file) {
+    console.log("Remove " + file);
+  });
 
 program
   .command("list")
