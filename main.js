@@ -17,6 +17,14 @@ function printCurrentProfile() {
   });
 }
 
+function printFeedback() {
+  fs.readFile(path.resolve(__dirname, "feedback.txt"), function(err, data) {
+    var feedbacks = data.toString().split("[break]");
+    var feedback = feedbacks[Math.floor(Math.random() * feedbacks.length)];
+    console.log(feedback);
+  });
+}
+
 function setCurrentProfile(file) {
   fs.readFile(
     path.resolve(__dirname, "main.json"),
@@ -59,7 +67,7 @@ function list() {
     }
   );
 }
-function logo(){
+function logo() {
   fs.readFile(path.resolve(__dirname, "imanant.txt"), function(err, data) {
     var logo = data.toString();
     console.log(logo);
@@ -84,13 +92,22 @@ program
   .description("Sets the file to the profiles")
   .option("-a, --all", "List all files and folders")
   .option("-l, --long", "")
-  .action(setCurrentProfile(file));
+  .action(function(file) {
+    setCurrentProfile(file);
+  });
 
 program
   .command("list")
   .description("List avaiable profiles")
-  .action(list());
-
+  .action(function() {
+    list();
+  });
+  program
+  .command("feedback")
+  .description("Allows users to give feedback")
+  .action(function() {
+    printFeedback();
+  });
 program.on("command:*", function() {
   console.error(
     "Invalid command: %s\nSee --help for a list of available commands.",
@@ -103,7 +120,7 @@ program.option("-v, --Version", "Prints out the version number");
 program.parse(process.argv);
 
 if (program.Version) {
-logo()
+  logo();
 }
 
 if (program.args.length < 1 && !program.Version) {
