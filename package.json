@@ -21,5 +21,8 @@
   "homepage": "https://github.com/AntTargett/CLI-Tools#readme",
   "dependencies": {
     "commander": "^2.16.0"
+  },
+  "devDependencies": {
+    "husky": "^0.14.3"
   }
 }
