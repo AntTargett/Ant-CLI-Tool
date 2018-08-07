@@ -8,11 +8,10 @@ program.command("print").action(function() {
 });
 
 program
-  .arguments("<pathToFile>")
   .command("add <pathToFile>")
   .description("Adds a file to the profiles")
   .action(function(pathToFile) {
-    console.log("Add a file" + pathToFile);
+    CommandActions.add(pathToFile)
   });
 
 program
