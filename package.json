@@ -11,7 +11,7 @@
     "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\""
   },
   "lint-staged": {
-    "*.js": [
+    "*.{js,json,css,md}": [
       "npm run pretty",
       "npm run test",
       "git add"
