@@ -1,6 +1,7 @@
 var fs = require("fs");
 var path = require("path");
 
+//Prints a random askii art from the currently selected profile
 function printCurrentProfile() {
     fs.readFile(path.resolve(__dirname, "../", "main.json"), function(
         err,

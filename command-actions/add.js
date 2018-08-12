@@ -1,9 +1,14 @@
 var fs = require("fs");
 var path = require("path");
 
-function setCurrentProfile(file) {
-  console.log(file);
-  fs.readFile(path.resolve(file), "utf8", function readFileCallback(err, data) {
+//The aim of this funciton is to add a path (supplied by user)
+// to the main.json file to make it selectable
+function addProfile(filePath) {
+  console.log(filePath);
+  fs.readprofile(path.resolve(filePath), "utf8", function readprofileCallback(
+    err,
+    data
+  ) {
     if (err) {
       console.log(err);
     } else {
@@ -11,4 +16,4 @@ function setCurrentProfile(file) {
     }
   });
 }
-module.exports = setCurrentProfile;
+module.exports = addProfile;
