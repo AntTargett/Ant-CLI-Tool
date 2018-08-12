@@ -7,12 +7,13 @@
     "imanant": "main.js"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "echo \"Test has been run\" && exit 1",
     "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\""
   },
   "lint-staged": {
     "*.js": [
       "npm run pretty",
+      "npm run test",
       "git add"
     ]
   },
