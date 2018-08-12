@@ -6,4 +6,5 @@ var set = require("./set");
 var feedback = require("./feedback");
 var add = require("./add");
 
+//Exports all functions
 module.exports = { addFunction, list, logo, print, set, feedback, add };

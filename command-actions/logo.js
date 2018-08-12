@@ -1,6 +1,7 @@
 var fs = require("fs");
 var path = require("path");
 
+//This function is used to print the logo when the user checks the version
 function logo() {
     fs.readFile(
         path.resolve(__dirname, "../askiiArt/", "imanant.txt"),

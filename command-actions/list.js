@@ -1,6 +1,8 @@
 var fs = require("fs");
 var path = require("path");
 
+//Provide users with a list to see the main.json file
+//Will show the Current profile, the other profule options and their paths
 function list() {
     fs.readFile(
         path.resolve(__dirname, "../", "main.json"),

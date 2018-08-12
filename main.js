@@ -1,5 +1,8 @@
 #!/usr/bin/env node --harmony
 
+//Main file that describes how each function is called
+//Catches and displays errors, describes the helps option and version option
+
 var program = require("commander");
 var CommandActions = require("./command-actions/index");
 
@@ -11,7 +14,7 @@ program
   .command("add <pathToFile>")
   .description("Adds a file to the profiles")
   .action(function(pathToFile) {
-    CommandActions.add(pathToFile)
+    CommandActions.add(pathToFile);
   });
 
 program

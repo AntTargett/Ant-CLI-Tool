@@ -1,7 +1,9 @@
 var fs = require("fs");
 var path = require("path");
 
-function setCurrentProfile(file) {
+//Changes profile to the profile given
+//Writes to a json object as this application is meant to work without an internet connection
+function setCurrentProfile(profile) {
     fs.readFile(
         path.resolve(__dirname, "../", "main.json"),
         "utf8",
@@ -10,8 +12,8 @@ function setCurrentProfile(file) {
                 console.log(err);
             } else {
                 obj = JSON.parse(data); //now it an object
-                obj.currentProfile = file; //add some data
-                json = JSON.stringify(obj); //convert it back to json
+                obj.currentProfile = profile; //add updated profile data
+                json = JSON.stringify(obj); //convert it back to string json
                 fs.writeFile(
                     path.resolve(__dirname, "../", "main.json"),
                     json,
@@ -23,7 +25,7 @@ function setCurrentProfile(file) {
                             console.log("Successfully swapped profile");
                         }
                     }
-                ); // write it back
+                ); 
             }
         }
     );
