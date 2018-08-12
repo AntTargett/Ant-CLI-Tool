@@ -1,55 +1,56 @@
 {
-  "name": "imanant",
-  "version": "1.8.4",
-  "description": "Node CLI tool that prints Ant aski art :D",
-  "main": "main.js",
-  "bin": {
-    "imanant": "main.js"
-  },
-  "scripts": {
-    "fix:other": "yarn prettier --write",
-    "fix:js": "yarn test:js --fix",
-    "fix": "yarn fix:js && yarn fix:other",
-    "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\"",
-    "test:other": "yarn prettier --list-different",
-    "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
-    "test": "yarn test:other && yarn test:js"
-  },
-  "lint-staged": {
-    "*.{js,jsx}": [
-      "eslint --fix",
-      "git add"
-    ],
-    "*.{json,md,scss}": [
-      "prettier --write --tab-width 4",
-      "git add"
-    ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged",
-      "pre-push": "npm test"
+    "name": "imanant",
+    "version": "1.8.4",
+    "description": "Node CLI tool that prints Ant aski art :D",
+    "main": "main.js",
+    "bin": {
+        "imanant": "main.js"
+    },
+    "scripts": {
+        "fix:other": "npm run  prettier --write",
+        "fix:js": "npm run test:js --fix",
+        "fix": "npm run fix:js && npm run  fix:other",
+        "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\"",
+        "test:other": "npm run prettier --list-different",
+        "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
+        "test": "npm run test:other && npm run test:js",
+        "lint-staged": "lint-staged"
+    },
+    "lint-staged": {
+        "*.{js,jsx}": [
+            "eslint --fix",
+            "git add"
+        ],
+        "*.{json,md,scss}": [
+            "prettier --write --tab-width 4",
+            "git add"
+        ]
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged",
+            "pre-push": "npm test"
+        }
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/AntTargett/CLI-Tools.git"
+    },
+    "author": "Antony Targett",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/AntTargett/CLI-Tools/issues"
+    },
+    "homepage": "https://github.com/AntTargett/CLI-Tools#readme",
+    "dependencies": {
+        "commander": "^2.16.0"
+    },
+    "devDependencies": {
+        "eslint": "^5.3.0",
+        "eslint-config-prettier": "^2.9.0",
+        "eslint-plugin-prettier": "^2.6.2",
+        "husky": "^1.0.0-rc.13",
+        "lint-staged": "^7.2.0",
+        "prettier": "^1.14.0"
     }
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/AntTargett/CLI-Tools.git"
-  },
-  "author": "Antony Targett",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/AntTargett/CLI-Tools/issues"
-  },
-  "homepage": "https://github.com/AntTargett/CLI-Tools#readme",
-  "dependencies": {
-    "commander": "^2.16.0"
-  },
-  "devDependencies": {
-    "eslint": "^5.3.0",
-    "eslint-config-prettier": "^2.9.0",
-    "eslint-plugin-prettier": "^2.6.2",
-    "husky": "^0.14.3",
-    "lint-staged": "^7.2.0",
-    "prettier": "^1.14.0"
-  }
 }
