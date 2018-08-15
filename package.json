@@ -7,11 +7,10 @@
         "imanant": "main.js"
     },
     "scripts": {
-        "fix:other": "npm run  prettier --write",
+        "fix:other": "prettier --write --tab-width 4",
         "fix:js": "npm run test:js --fix",
         "fix": "npm run fix:js && npm run  fix:other",
         "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\"",
-        "test:other": "npm run prettier --list-different",
         "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
         "test": "npm run test:other && npm run test:js",
         "lint-staged": "lint-staged"
@@ -46,10 +45,8 @@
         "commander": "^2.16.0"
     },
     "devDependencies": {
-        "eslint": "^4.19.1",
-        "eslint-config-airbnb-base": "^13.0.0",
+        "eslint": "^5.3.0",
         "eslint-config-prettier": "^2.9.0",
-        "eslint-plugin-import": "^2.13.0",
         "eslint-plugin-prettier": "^2.6.2",
         "husky": "^1.0.0-rc.13",
         "lint-staged": "^7.2.0",
