@@ -11,7 +11,7 @@
         "fix:js": "npm run test:js --fix",
         "fix": "npm run fix:js && npm run  fix:other",
         "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\"",
-        "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
+        "test:js": "eslint --ignore-path .gitignore --ignore-path \"**/*.{js,jsx}\"",
         "test": "npm run test:js",
         "lint-staged": "lint-staged"
     },
