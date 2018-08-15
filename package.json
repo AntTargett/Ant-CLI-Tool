@@ -12,7 +12,7 @@
         "fix": "npm run fix:js && npm run  fix:other",
         "pretty": "prettier --write --tab-width 4 \"command-actions/**/*.js\"",
         "test:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
-        "test": "npm run test:other && npm run test:js",
+        "test": "npm run test:js",
         "lint-staged": "lint-staged"
     },
     "lint-staged": {
