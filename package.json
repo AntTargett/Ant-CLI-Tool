@@ -1,6 +1,6 @@
 {
     "name": "imanant",
-    "version": "1.8.4",
+    "version": "1.8.6",
     "description": "Node CLI tool that prints Ant aski art :D",
     "main": "main.js",
     "bin": {
@@ -42,6 +42,7 @@
     },
     "homepage": "https://github.com/AntTargett/CLI-Tools#readme",
     "dependencies": {
+        "chalk": "^2.4.2",
         "commander": "^2.16.0"
     },
     "devDependencies": {
