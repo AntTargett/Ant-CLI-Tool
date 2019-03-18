@@ -8,11 +8,13 @@ function printFunction(err, data){
 	var randomArt = arrayOfArt[Math.floor(Math.random() * arrayOfArt.length)];
 	var lines= randomArt.toString().split("\n")
 	let colours=[]
+	// Attempt to parse first line to check if colours have been specified
 	try {
 		colours= JSON.parse(lines[0]) 
 	} catch(err){
 		colours=[]
 	}
+	//Only try to attempt to print colours if colour options have been provided
 	if(colours.length>=1 && Array.isArray(colours)){
 		lines.splice(0,1)
 		if(colours.length===1){
@@ -35,6 +37,7 @@ function printFunction(err, data){
 		} else{
 			var colourIndex=0
 			lines.forEach(line=>{
+				// Aim is to print each line of art following the provided colours, looping back around when reaching the end of the array
 				console.log(chalk.keyword(colours[colourIndex])(line.toString()))
 				if(colourIndex<colours.length-1){
 					colourIndex++
