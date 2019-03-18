@@ -11,7 +11,9 @@ Find my package [here](https://www.npmjs.com/package/imanant) :ant:
 npm install -g imanant
 
 #### Commands
-
+Default command specification is the print command
+-   -h/--help : Lists out commands and options
+-   -v/--version: Displays version number
 -   list : Lists the profiles available and the current profile
 -   print : prints out a random askii art based on the current profile
 -   set [profile] : Takes a profile arguement and sets the current profile to that txt file
