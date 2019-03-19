@@ -25,5 +25,7 @@ Default command specification is the print command
 
 -   [x] Swap between files
 -   [x] Add Colour :ok_hand:
+-   [ ] Add documentation for adding your own askii file
+-   [ ] Add gif to show CLI usage
 -   [ ] Update Feedback function
 -   [ ] Convert to Typescript
