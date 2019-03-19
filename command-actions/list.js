@@ -3,7 +3,7 @@ const path = require("path");
 const chalk = require("chalk");
 
 //Provide users with a list to see the main.json file
-//Will show the Current profile, the other profule options and their paths
+//Will show the Current file, the other file options and their filenames
 function list() {
 	fs.readFile(
 		path.resolve(__dirname, "../", "main.json"),
@@ -13,15 +13,21 @@ function list() {
 				console.log(err);
 			} else {
 				console.log(
-					"Current Profile " + chalk.keyword("green")(JSON.parse(data).currentProfile)
+					"Current File " + chalk.keyword("green")(JSON.parse(data).currentFile)
 				);
-				console.log("Profiles: ");
-				Object.entries(JSON.parse(data).profiles).forEach(profile=>{
-					console.log("Name: "+ chalk.keyword("green")(profile[0]) +" Filename: "+chalk.keyword("green")(profile[1].fileName));
+				fs.readdir(path.resolve(__dirname, "../", "askiiArt"), function(err, items) {
+					console.log("Files: ");
+					items.forEach(item=>{
+						console.log("Name: "+ chalk.keyword("green")(item.replace(".txt","")) +" File: "+chalk.keyword("green")(item));
+					})
+		
 				});
+				
 			}
 		}
 	);
+	
+	
 }
 
 module.exports = list;

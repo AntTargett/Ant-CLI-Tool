@@ -4,7 +4,7 @@ var path = require("path");
 //Temporary function to print a random string from the feedback file
 //The feedback is not very useful and is directed at a co-worker (sean)
 function printFeedback() {
-	fs.readFile(path.resolve(__dirname, "../askiiArt/", "feedback.txt"), function(
+	fs.readFile(path.resolve(__dirname, "../assets/", "feedback.txt"), function(
 		err,
 		data
 	) {

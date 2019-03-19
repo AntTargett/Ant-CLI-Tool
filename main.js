@@ -11,33 +11,20 @@ program.command("print").action(function() {
 	CommandActions.print();
 });
 
-program
-	.command("add <pathToFile>")
-	.description("Adds a file to the profiles")
-	.action(function(pathToFile) {
-		CommandActions.add(pathToFile);
-	});
 
 program
 	.command("set <file>")
-	.description("Sets the file to the profiles")
+	.description("Sets the file to the filename provided")
 	.option("-a, --all", "List all files and folders")
 	.option("-l, --long", "")
 	.action(function(file) {
 		CommandActions.set(file);
 	});
-program
-	.command("remove <file>")
-	.description("Sets the file to the profiles")
-	.option("-a, --all", "List all files and folders")
-	.option("-l, --long", "")
-	.action(function(file) {
-		console.log("Remove " + file);
-	});
+
 
 program
 	.command("list")
-	.description("List avaiable profiles")
+	.description("List avaiable files")
 	.action(function() {
 		CommandActions.list();
 	});
@@ -49,9 +36,8 @@ program
 	});
 program.on("command:*", function() {
 	console.error(
-		chalk.keyword("red")(
-			"Invalid command: %s\nSee --help for a list of available commands.",
-			program.args.join(" ")
+		chalk.red(
+			"Invalid command: "+program.args.join()+"\nSee --help for a list of available commands.",
 		)
 	);
 	process.exit(1);

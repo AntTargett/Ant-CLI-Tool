@@ -11,20 +11,19 @@ Find my package [here](https://www.npmjs.com/package/imanant) :ant:
 npm install -g imanant
 
 #### Commands
+
 Default command specification is the print command
+
 -   -h/--help : Lists out commands and options
 -   -v/--version: Displays version number
--   list : Lists the profiles available and the current profile
--   print : prints out a random askii art based on the current profile
--   set [profile] : Takes a profile arguement and sets the current profile to that txt file
--   add(Not implemented): Can add your own text files with askii art.
+-   list : List the files available in the askiiArt directory
+-   print : prints out a random askii art based on the current file
+-   set [file] : Takes a filename arguement and sets the current file to that txt file
 -   feedback: Will at some point allow users to send feedback. Currently just logs random text
 
 ## Features to come
 
--   [ ] Create your own profile
--   [ ] Add art to an exisitng profile
--   [x] Swap between profiles
+-   [x] Swap between files
 -   [x] Add Colour :ok_hand:
 -   [ ] Update Feedback function
 -   [ ] Convert to Typescript

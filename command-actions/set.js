@@ -1,38 +1,64 @@
 var fs = require("fs");
 var path = require("path");
 const chalk = require("chalk");
-//Changes profile to the profile given
-//Writes to a json object as this application is meant to work without an internet connection
-function setCurrentProfile(profile) {
-	fs.readFile(
-		path.resolve(__dirname, "../", "main.json"),
-		"utf8",
-		function readFileCallback(err, data) {
-			if (err) {
-				console.log(err);
-			} else {
-				var obj = JSON.parse(data); //now it is an object
-				if(Object.keys(obj.profiles).find(item=>item===profile)){
-					obj.currentProfile = profile; //add updated profile data
-					var json = JSON.stringify(obj); //convert it back to string json
-					fs.writeFile(
-						path.resolve(__dirname, "../", "main.json"),
-						json,
-						"utf8",
-						function writeFileCallback(err) {
-							if (err) {
-								console.log(err);
-							} else {
-								console.log(chalk.keyword("green")("Successfully swapped profile"))
-							}
+//Changes current file to the file provided
+function setcurrentFile(file) {
+	fs.readdir(path.resolve(__dirname, "../", "askiiArt"), function(err, items) {
+		if (err) {
+			console.log(err);
+		} else {
+			// To validate the text file with filename 'file' exists in the folder
+			if (
+				items.find(
+					item => item.replace(".txt", "") === file || (file.includes(".txt") && file === item)
+				)
+			) {
+				fs.readFile(
+					path.resolve(__dirname, "../", "main.json"),
+					"utf8",
+					function readFileCallback(err, data) {
+						if (err) {
+							console.log(err);
+						} else {
+							var obj = JSON.parse(data); //now it is an object
+							obj.currentFile = file; //add updated file data
+							var json = JSON.stringify(obj); //convert it back to string json
+							fs.writeFile(
+								path.resolve(__dirname, "../", "main.json"),
+								json,
+								"utf8",
+								function writeFileCallback(err) {
+									if (err) {
+										console.log(err);
+									} else {
+										console.log(
+											chalk.keyword("green")(
+												"Successfully swapped file to " + file
+											)
+										);
+									}
+								}
+							);
 						}
+					}
+				);
+			} else {
+				console.log(
+					chalk.keyword("red")(
+						"File does not exist, please create a text file matching that name"
+					)
+				);
+				console.log("Files: ");
+				items.forEach(item => {
+					console.log(
+						"Name: " +
+              chalk.keyword("green")(item.replace(".txt", "")) +
+              " Filename: " +
+              chalk.keyword("green")(item)
 					);
-				}else{
-					console.log(chalk.keyword("red")("Profile does not exist, please create a profile matching that name"))
-				}
-			
+				});
 			}
 		}
-	);
+	});
 }
-module.exports = setCurrentProfile;
+module.exports = setcurrentFile;
