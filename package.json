@@ -2,6 +2,17 @@
     "name": "imanant",
     "version": "1.8.8",
     "description": "Node CLI tool that prints Ant aski art :D",
+     "keywords": [
+        "node",
+        "nodejs",
+        "ants",
+        "cli",
+        "cli-tool",
+        "askii",
+        "askii art",
+        "commander",
+        "chalk"
+    ],
     "main": "main.js",
     "bin": {
         "imanant": "main.js"
