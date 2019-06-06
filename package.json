@@ -2,7 +2,7 @@
     "name": "imanant",
     "version": "1.8.8",
     "description": "Node CLI tool that prints Ant aski art :D",
-     "keywords": [
+    "keywords": [
         "node",
         "nodejs",
         "ants",
@@ -54,14 +54,14 @@
     "homepage": "https://github.com/AntTargett/CLI-Tools#readme",
     "dependencies": {
         "chalk": "^2.4.2",
-        "commander": "^2.16.0"
+        "commander": "^2.20.0"
     },
     "devDependencies": {
-        "eslint": "^5.3.0",
+        "eslint": "^5.16.0",
         "eslint-config-prettier": "^2.9.0",
         "eslint-plugin-prettier": "^2.6.2",
         "husky": "^1.0.0-rc.13",
         "lint-staged": "^7.2.0",
-        "prettier": "^1.14.0"
+        "prettier": "^1.17.1"
     }
 }
