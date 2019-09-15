@@ -24,7 +24,7 @@ Default command specification is the print command
 
 #### Example
 
-![](imanant-example.gif)
+![](Imanant-example.gif)
 
 ## To do
 
