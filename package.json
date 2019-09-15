@@ -1,6 +1,6 @@
 {
     "name": "imanant",
-    "version": "1.8.8",
+    "version": "1.8.9",
     "description": "Node CLI tool that prints Ant aski art :D",
     "keywords": [
         "node",
