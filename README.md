@@ -22,6 +22,10 @@ Default command specification is the print command
 -   print : prints out a random askii art based on the current file
 -   set [file] : Takes a filename arguement and sets the current file to that txt file
 
+#### Example
+
+![](imanant-example.gif)
+
 ## To do
 
 -   [x] Swap between files
