@@ -3,7 +3,7 @@ var path = require("path");
 const chalk = require("chalk");
 //Changes current file to the file provided
 function setcurrentFile(file) {
-	fs.readdir(path.resolve(__dirname, "../", "askiiArt"), function(err, items) {
+	fs.readdir(path.resolve(__dirname, "../", "asciiArt"), function (err, items) {
 		if (err) {
 			console.log(err);
 		} else {
@@ -52,9 +52,9 @@ function setcurrentFile(file) {
 				items.forEach(item => {
 					console.log(
 						"Name: " +
-              chalk.keyword("green")(item.replace(".txt", "")) +
-              " Filename: " +
-              chalk.keyword("green")(item)
+						chalk.keyword("green")(item.replace(".txt", "")) +
+						" Filename: " +
+						chalk.keyword("green")(item)
 					);
 				});
 			}

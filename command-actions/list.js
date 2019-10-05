@@ -15,19 +15,19 @@ function list() {
 				console.log(
 					"Current File " + chalk.keyword("green")(JSON.parse(data).currentFile)
 				);
-				fs.readdir(path.resolve(__dirname, "../", "askiiArt"), function(err, items) {
+				fs.readdir(path.resolve(__dirname, "../", "asciiArt"), function (err, items) {
 					console.log("Files: ");
-					items.forEach(item=>{
-						console.log("Name: "+ chalk.keyword("green")(item.replace(".txt","")) +" File: "+chalk.keyword("green")(item));
+					items.forEach(item => {
+						console.log("Name: " + chalk.keyword("green")(item.replace(".txt", "")) + " File: " + chalk.keyword("green")(item));
 					})
-		
+
 				});
-				
+
 			}
 		}
 	);
-	
-	
+
+
 }
 
 module.exports = list;
