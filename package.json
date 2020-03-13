@@ -8,8 +8,8 @@
         "ants",
         "cli",
         "cli-tool",
-        "askii",
-        "askii art",
+        "ascii",
+        "ascii art",
         "commander",
         "chalk"
     ],
