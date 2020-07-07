@@ -10,7 +10,7 @@ Find my package [here](https://www.npmjs.com/package/ant) :ant:
 
 #### To install
 
-npm install -g ant
+npm install -g @anttargett/ant
 
 #### Commands
 

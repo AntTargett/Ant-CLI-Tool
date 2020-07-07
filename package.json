@@ -1,5 +1,5 @@
 {
-    "name": "ant",
+    "name": "@anttargett/ant",
     "version": "1.0.0",
     "description": "Node CLI tool that prints Ant aski art :D",
     "keywords": [
