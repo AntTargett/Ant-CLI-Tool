@@ -7,7 +7,7 @@ const pkg = require("../package.json")
 //This function is used to print the logo when the user checks the version
 function logo() {
 	fs.readFile(
-		path.resolve(__dirname, "../assets/", "imanant.txt"),
+		path.resolve(__dirname, "../assets/", "ant.txt"),
 		printFunction
 	)
 	console.log(chalk.green(pkg.version));

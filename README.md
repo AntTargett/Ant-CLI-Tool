@@ -1,16 +1,16 @@
-# Ant CLI Tool (imanant tool)
+# Ant CLI Tool (ant tool)
 
 The aim of this small project is to serve as a Template project for other command line Nodejs projects.
 
 Idea from [Kyle Robinson Young](https://www.youtube.com/watch?v=C9xGEJ80jjs) who created a cli tool that printed out ascii art
 
-Cli tool that prints out aski ant art when typing in the command imanant :ant:
+Cli tool that prints out aski ant art when typing in the command ant :ant:
 
-Find my package [here](https://www.npmjs.com/package/imanant) :ant:
+Find my package [here](https://www.npmjs.com/package/ant) :ant:
 
 #### To install
 
-npm install -g imanant
+npm install -g ant
 
 #### Commands
 
@@ -24,7 +24,7 @@ Default command specification is the print command
 
 #### Example
 
-![](Imanant-example.gif)
+![](ant-example.gif)
 
 ## To do
 
